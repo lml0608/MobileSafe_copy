@@ -2,12 +2,16 @@ package com.example.android.mobilesafe.activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.android.mobilesafe.R;
+import com.example.android.mobilesafe.engine.SmsBackUp;
+
+import java.io.File;
 
 public class AToolActivity extends AppCompatActivity {
 
@@ -48,7 +52,7 @@ public class AToolActivity extends AppCompatActivity {
      */
     protected void showSmsBackUpDialog() {
 
-        ProgressDialog progressDialog = new ProgressDialog(this);
+        final ProgressDialog progressDialog = new ProgressDialog(this);
 
         progressDialog.setIcon(R.drawable.ic_launcher);
 
@@ -58,7 +62,18 @@ public class AToolActivity extends AppCompatActivity {
 
         progressDialog.show();
 
-        //获取短信
+
+        new Thread(){
+            @Override
+            public void run() {
+
+                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "sms.xml";
+                //调用备份短信方法
+                SmsBackUp.backup(getApplicationContext(), path, progressDialog);
+
+
+            }
+        }.start();
 
     }
 

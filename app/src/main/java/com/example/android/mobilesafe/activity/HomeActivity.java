@@ -66,6 +66,9 @@ public class HomeActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             permissionList.add(Manifest.permission.ACCESS_COARSE_LOCATION);
         }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED) {
+            permissionList.add(Manifest.permission.READ_SMS);
+        }
         if (!permissionList.isEmpty()) {
 
             String[] permissions = permissionList.toArray(new String[permissionList.size()]);
