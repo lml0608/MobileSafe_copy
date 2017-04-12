@@ -1,10 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.android.mobilesafe.activity.SetupOneActivity">
+    <TextView
+        style="@style/TitleStyle"
+        android:text="1欢迎使用手机防盗"/>
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您的手机防盗卫士："
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:layout_margin="5sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sim卡变更报警"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:drawableLeft="@android:drawable/star_big_on"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS追踪"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:drawableLeft="@android:drawable/star_big_on"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="远程数据销毁"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:drawableLeft="@android:drawable/star_big_on"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="远程锁屏"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:drawableLeft="@android:drawable/star_big_on"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+    <!--让内部点的控件居中-->
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:background="@android:drawable/presence_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:background="@android:drawable/presence_invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:background="@android:drawable/presence_invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:background="@android:drawable/presence_invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:background="@drawable/setup1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+        <!--图片选择期，在选择和未选中，切换展示图片-->
+        <!--<Button-->
+            <!--android:text="下一页"-->
+            <!--android:onClick="nextPage"-->
+            <!--android:background="@drawable/selector_next_btn_bg"-->
+            <!--android:drawableRight="@drawable/next"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentRight="true"/>-->
+        <Button
+            style="@style/nextBtn"/>
+    </RelativeLayout>
+</LinearLayout>

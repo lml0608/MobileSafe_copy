@@ -1,23 +1,19 @@
-import java.beans.Encoder;
+package com.example.android.mobilesafe.utils;
+
+import android.util.Log;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 
 public class Md5Util {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		//加盐
-		String psd = "123"+"abc";
-		encoder(psd);
-	}
+	private static final String TAG = Md5Util.class.getSimpleName();
 
 	/**给指定字符串按照md5算法去加密
 	 * @param psd	需要加密的密码
 	 */
-	private static void encoder(String psd) {
+	public static String encoder(String psd) {
 		try {
 			//1,指定加密算法类型
 			MessageDigest digest = MessageDigest.getInstance("MD5");
@@ -38,9 +34,13 @@ public class Md5Util {
 				stringBuffer.append(hexString);
 			}
 			//5,打印测试
-			System.out.println(stringBuffer.toString());
+			Log.i(TAG, "md5加密后的字符串为：" + stringBuffer.toString());
+
+			return stringBuffer.toString();
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
 		}
+
+		return "";
 	}
 }

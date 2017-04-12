@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.mobilesafe.activity.Setup4Activity">
+    android:orientation="vertical"
+    tools:context="com.example.android.mobilesafe.activity.Setup3Activity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        style="@style/TitleStyle"
+        android:text="4恭喜您，设置完成！"/>
+
+    <CheckBox
+        android:id="@+id/cb_box"
+        android:text="您没有开启防盗保护"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!--自定义组合控件-->
+
+    <!--让内部点的控件居中-->
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:background="@android:drawable/presence_invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:background="@android:drawable/presence_invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:background="@android:drawable/presence_invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:background="@android:drawable/presence_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:background="@drawable/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+        <!--图片选择期，在选择和未选中，切换展示图片-->
+        <!--<Button-->
+        <!--android:text="下一页"-->
+        <!--android:onClick="nextPage"-->
+        <!--android:background="@drawable/selector_number_btn_bg"-->
+        <!--android:drawableLeft="@drawable/previous"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentLeft="true"/>-->
+        <Button
+            style="@style/preBtn"/>
+        <Button
+            style="@style/nextBtn"/>
+    </RelativeLayout>
+
+</LinearLayout>

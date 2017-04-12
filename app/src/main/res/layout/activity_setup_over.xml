@@ -1,10 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.mobilesafe.activity.SetupOverActivity">
+    <TextView
+        style="@style/TitleStyle"
+        android:text="手机防盗"/>
 
-</android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="安全号码"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_phone"
+            android:hint="15112568068"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:background="@drawable/listview_divider"
+            android:layout_below="@+id/tv_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="防盗锁是否开启"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_lock"
+            android:background="@drawable/lock"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"/>
+
+        <ImageView
+            android:background="@drawable/listview_divider"
+            android:layout_below="@+id/tv_lock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_reset"
+        android:background="@drawable/selector_reset_setup_bg"
+        android:text="重新进入设置向导"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:background="@android:color/darker_gray"
+        android:text="功能简介"
+        android:padding="5dp"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GPS追踪：#*location*#"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:drawableLeft="@android:drawable/star_big_on"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放报警音乐：#*alarm*#"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:drawableLeft="@android:drawable/star_big_on"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="数据销毁：#*wipedata*#"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:drawableLeft="@android:drawable/star_big_on"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="远程锁屏：#*lockscreen*#"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:drawableLeft="@android:drawable/star_big_on"
+        android:gravity="center"
+        android:layout_margin="5sp"/>
+
+
+
+
+</LinearLayout>

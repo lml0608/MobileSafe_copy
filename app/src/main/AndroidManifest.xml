@@ -89,6 +89,12 @@
 
         <activity android:name=".activity.BlackNumberActivity">
         </activity>
+
+        <service
+            android:name=".service.BlackNumberService"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>
