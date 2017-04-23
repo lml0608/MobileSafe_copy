@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.util.Xml;
+import android.widget.ProgressBar;
 
 import org.xmlpull.v1.XmlSerializer;
 
@@ -27,9 +28,9 @@ public class SmsBackUp {
     /**
      * @param context 上下文环境
      * @param path  备份文件路径
-     * @param progressDialog 进度条
+     * @param callBack 接口
      */
-    public static void backup(Context context, String path, ProgressDialog progressDialog) {
+    public static void backup(Context context, String path, CallBack callBack) {
 
 
         FileOutputStream fos = null;
@@ -59,7 +60,12 @@ public class SmsBackUp {
             newSerializer.startTag(null, "smss");
 
             //备份短信总数指定
-            progressDialog.setMax(cursor.getCount());
+            //a对话框
+            //b进度条
+            if (callBack != null) {
+                callBack.setMax(cursor.getCount());
+            }
+
 
             //读取数据写入xml
 
@@ -89,14 +95,18 @@ public class SmsBackUp {
                 index++;
                 Thread.sleep(500);
                 //可以在子线程中更新
-                progressDialog.setProgress(index);
+                //pd.setProgress(index);
+
+                //a
+                //b
+                if( callBack != null) {
+
+                    callBack.setProgress(index);
+                }
             }
             newSerializer.endTag(null, "smss");
 
             newSerializer.endDocument();
-
-
-
 
 
         } catch (Exception e) {
@@ -115,6 +125,17 @@ public class SmsBackUp {
         }
 
     }
+
+    //回调
+
+    public interface CallBack {
+        //对话框，进度条。
+        public void setMax(int max);
+
+        //备份过程中百分比
+        public void setProgress(int index);
+    }
+
 
 
 }

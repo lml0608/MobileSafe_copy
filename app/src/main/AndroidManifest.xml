@@ -96,6 +96,11 @@
             android:enabled="true"
             android:exported="true">
         </service>
+
+        <activity android:name=".activity.AppManagerActivity">
+        </activity>
+        <activity android:name=".activity.ProcessManagerActivity">
+        </activity>
     </application>
 
 </manifest>

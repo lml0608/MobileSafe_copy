@@ -6,6 +6,7 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.android.mobilesafe.R;
@@ -17,6 +18,7 @@ public class AToolActivity extends AppCompatActivity {
 
     private TextView mPhoneAddress;
     private TextView mSmsBackup;
+    private ProgressBar mPdbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,8 @@ public class AToolActivity extends AppCompatActivity {
     private void initSmsBackUp() {
 
         mSmsBackup = (TextView) findViewById(R.id.tv_sms_backup);
+
+        mPdbar = (ProgressBar) findViewById(R.id.pd_bar);
 
         mSmsBackup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +73,28 @@ public class AToolActivity extends AppCompatActivity {
 
                 String path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "sms.xml";
                 //调用备份短信方法
-                SmsBackUp.backup(getApplicationContext(), path, progressDialog);
+                SmsBackUp.backup(getApplicationContext(), path, new SmsBackUp.CallBack() {
+                    @Override
+                    public void setMax(int max) {
+
+                        //对话框
+                        //progressDialog.setMax(max);
+                        //进度条
+                        mPdbar.setMax(max);
+                    }
+
+                    @Override
+                    public void setProgress(int index) {
+
+                        //对话框
+                        //progressDialog.setProgress(index);
+                        //进度条
+                        mPdbar.setProgress(index);
+
+                    }
+                });
+
+                progressDialog.dismiss();
 
 
             }

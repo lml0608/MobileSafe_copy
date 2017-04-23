@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/local_popup_bg">
+
+    <TextView
+        android:id="@+id/uninstall_text_view"
+        android:drawableTop="@drawable/img1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="卸载"/>
+
+    <TextView
+        android:id="@+id/open_text_view"
+        android:drawableTop="@drawable/img2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开启"/>
+
+    <TextView
+        android:id="@+id/share_text_view"
+        android:drawableTop="@drawable/img3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分享"/>
+
+
+
+
+</LinearLayout>
